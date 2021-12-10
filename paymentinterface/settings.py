@@ -30,8 +30,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, 'paymentinterface/.env'))
 SECRET_KEY = 'django-insecure-j(=dl!7l!rj0k+-e^ljk9)!h8q(h_ppoi29njyv9-a!ftyq99('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
-
+DEBUG = True
 ALLOWED_HOSTS = []
 
 
