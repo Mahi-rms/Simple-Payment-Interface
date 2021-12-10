@@ -41,7 +41,7 @@ def razcon(request):
 
 
 def load_stri(request):
-    DOMAIN=request.get_host()
+    DOMAIN=settings.DOMAIN
     if(request.method=='POST'):
         price=int(request.POST['amount'])*100
         checkout_session = stripe.checkout.Session.create(
@@ -69,7 +69,6 @@ def load_stri(request):
         order.amount=request.POST['amount']
         order.method='Stripe'
         order.save()
-        print(checkout_session)
         return redirect(checkout_session.url)
     return render(request,"stripe.html")
 
