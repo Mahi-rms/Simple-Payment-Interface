@@ -10,10 +10,11 @@ input{
     border-radius: 5px;
     border: 1px solid rgb(189, 186, 186);
 }
-input[type=submit]{
+input[type=submit],input[type=button]{
     background: #6dabe4;
     color: #fff;
     width: 60%;
+    margin-top: 5px;
 }
 .tle{
     text-align: center;
