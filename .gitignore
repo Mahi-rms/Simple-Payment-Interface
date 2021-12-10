@@ -2,6 +2,7 @@
 *.o
 
 #Django-Environ file
+.env
 
 #Virtual env folder
 env/
