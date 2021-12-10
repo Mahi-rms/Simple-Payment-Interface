@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/payment.css' %}">
+    <script>
+        function load_razorpay() {
+            fetch('/load_raz')
+            .then(response => response.text())
+            .then(data => document.getElementById("content").innerHTML=data);
+        }
+        function load_stripe() {
+            fetch('/load_stri')
+            .then(response => response.text())
+            .then(data => document.getElementById("content").innerHTML=data);
+        }
+    </script>
+    <title>Payment Gateway</title>
+</head>
+<body onload="load_razorpay()">
+    <h1 class="tle">Simple Payment Interface</h1>
+    <div class="full-container">
+        <div class="container">
+            <div class="left">
+                <div class="signin-head">
+                    <h1 class="pay">Payment Methods</h1>
+                </div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="method" onclick="load_razorpay()" checked> Razorpay</label>
+                    <label class="opt"><input type="radio" name="method" onclick="load_stripe()"> Stripe</label>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="right">
+                <div class="form-container" id="content">
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/interface.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h2 class="tle">
+        Payment Confirmation
+    </h2>
+    <div class="container">
+        <form action="razcon" method="post">
+            {% csrf_token %}
+            <h2>Amount: <span class="val">{{amountr}} INR</span></h2>
+            <h2>Name: <span class="val">{{name}}</span></h2>
+            <h2>Email: <span class="val">{{email}}</span></h2>
+            
+            <input type="hidden" name="amount" value="{{amountr}}">
+            <input type="hidden" name="name" value="{{name}}">
+            <input type="hidden" name="email" value="{{email}}">
+            <script
+                src="https://checkout.razorpay.com/v1/checkout.js"
+                data-key="rzp_test_jHMVQkT3dpjSEW"
+                data-amount="{{amountp}}"
+                data-currency="INR"
+                data-order_id="{{payment.id}}"
+                data-buttontext="Pay Now"
+                data-name="Mahesh Vanam"
+                data-description="A Simple Payment Interface"
+                data-image="https://e7.pngegg.com/pngimages/315/219/png-clipart-white-logo-computer-icons-payment-credit-card-electronic-funds-transfer-payment-methods-card-icon-text-logo.png"
+                data-prefill.name="{{name}}"
+                data-prefill.email="{{email}}"
+            ></script>
+        </form>
+    </div>
+</body>
+</html>

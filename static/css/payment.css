@@ -1,0 +1,31 @@
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+img{
+    max-width: 30%;
+    max-height: 30%;
+}
+input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(189, 186, 186);
+}
+input[type=submit]{
+    background: #6dabe4;
+    color: #fff;
+    width: 60%;
+}
+.tle{
+    text-align: center;
+    font-size: 30px;
+}
+
+.str{
+    max-width: 15%;
+    max-height: 15%;
+}
+
+.form_ele{
+    margin-top: 7.5px;
+    margin-bottom: 7.5px;
+}

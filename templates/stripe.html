@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/interface.css' %}">
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <title>Razorpay</title>
+</head>
+<body>
+    <!--<h1 class=".tle">Stripe</h1>-->
+    <img class="str" src="{% static 'images/stripe.png' %}" alt="" srcset="">
+    <form action="load_stri" method="post">
+        {% csrf_token %}
+        <div class="pay_form">
+            <div class="form_ele"><input type="text" name="name" id="name" placeholder="Name" required></div>
+            <div class="form_ele"><input type="email" name="email" id="email" placeholder="Email" required></div>
+            <div class="form_ele"><input type="number" name="amount" id="amount" placeholder="Amount" required></div>
+            <input type="submit" value="Pay">
+        </div>
+    </form>
+</body>
+</html>
