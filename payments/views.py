@@ -39,8 +39,9 @@ def razcon(request):
     else:
         return render(request,"raz_con.html")
 
-DOMAIN=socket.gethostname()
+
 def load_stri(request):
+    DOMAIN=request.get_host()
     if(request.method=='POST'):
         price=int(request.POST['amount'])*100
         checkout_session = stripe.checkout.Session.create(
